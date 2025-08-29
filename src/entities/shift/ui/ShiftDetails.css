@@ -1,0 +1,44 @@
+.shift-details h4 {
+    margin-top: 0;
+    color: #2c3e50;
+   
+    padding-bottom: 10px;
+  }
+  
+  .detail-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    border-left: 4px solid #3498db;
+  }
+  
+  .detail-section h5 {
+    margin: 0 0 10px 0;
+    color: #34495e;
+  }
+  
+  .deviation {
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: 5px 0;
+  }
+  
+  .deviation.late {
+    background: #ffeaea;
+    border-left: 4px solid #e74c3c;
+    color: #c0392b;
+  }
+  
+  .deviation.early {
+    background: #fff3e0;
+    border-left: 4px solid #f39c12;
+    color: #d35400;
+  }
+  
+  .deviation.absent {
+    background: #fee;
+    border-left: 4px solid #c0392b;
+    color: #e74c3c;
+    font-weight: bold;
+  }

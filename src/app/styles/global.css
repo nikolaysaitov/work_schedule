@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+input, select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  padding: 8px 16px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+.mode-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.mode-toggle button {
+  margin: 0 5px;
+  background: #7f8c8d;
+}
+
+.mode-toggle button.active {
+  background: #3498db;
+}
+
+.schedule-container {
+  overflow-x: auto;
+  
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  position: sticky;
+  top: 0;
+}
+
+.employee-row:hover {
+  background-color: #f9f9f9;
+}
+
+.employee-row-element{
+  width: 150px;
+  height: 100px;
+  font-size: 14px;
+}
+
+.time-cell {
+  position: relative;
+  height: 40px;
+}
+
+.time-scale {
+  display: flex;
+  height: 30px;
+  background: #f0f0f0;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.time-scale-hour {
+  flex: 1;
+  text-align: center;
+  font-size: 12px;
+  padding: 5px 0;
+  border-right: 1px solid #ddd;
+}
+
+.shift {
+  position: absolute;
+  height: 25px;
+  border-radius: 4px;
+  top: 50%;
+  transform: translateY(-10%);
+  cursor: pointer;
+}
+
+.plan-shift {
+  background-color: rgba(52, 152, 219, 0.7);
+  z-index: 1;
+}
+
+.fact-shift {
+  background: repeating-linear-gradient(
+      45deg,
+      rgba(46, 204, 113, 0.6),
+      rgba(46, 204, 113, 0.6) 5px,
+      rgba(39, 174, 96, 0.6) 5px,
+      rgba(39, 174, 96, 0.6) 10px
+  );
+  z-index: 2;
+}
+
+.late {
+  border: 2px dashed #e74c3c;
+}
+
+.early {
+  border: 2px dotted #f39c12;
+}
+
+.absent {
+  background-color: rgba(231, 76, 60, 0.3);
+}
+
+.shift-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  z-index: 100;
+  font-size: 12px;
+  pointer-events: none;
+  transform: translateY(-100%);
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .employee-row-element{
+    width: 60px;
+    font-size: 12px;
+    height: 50px;
+  }
+  .controls {
+      flex-direction: column;
+  }
+  
+  .filter-group {
+      width: 100%;
+  }
+  
+  th, td {
+      padding: 8px 10px;
+  }
+}
+
+
+
+.time-cell {
+  min-width: 170px;
+  position: relative;
+  height: 40px;
+  background-image: 
+    linear-gradient(90deg, #e0e0e0 1px, transparent 1px),
+    linear-gradient(90deg, #ccc 1px, transparent 1px);
+  background-size: 
+    4.1667% 100%, /* Каждый час (100%/24 = 4.1667%) */
+    100% 100%;
+  background-position: 
+    0 0,
+    0 0;
+  border-right: 1px solid #ddd;
+}
+
+.shift {
+  position: absolute;
+  height: 25px;
+  border-radius: 4px;
+  top: 30%;
+  transform: translateY(-30%);
+  cursor: pointer;
+  z-index: 2; 
+}
+
+
+.time-cell:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.03);
+  pointer-events: none;
+}
+
+.btn-active {
+  background: #3498db !important;
+}
